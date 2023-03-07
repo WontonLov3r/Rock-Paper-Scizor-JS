@@ -119,4 +119,3 @@ const reset = () => {
 }
 
 playGame();
-
