@@ -47,8 +47,8 @@ const determineWinner = (userChoice, computerChoice) => {
       return "This game is a tie!";
     }
     if (userChoice === 'paper' && userChoice === computerChoice) {
-      document.getElementById("winnerTag").innerHTML = 'It is a Tie!';
       document.getElementById("compImg").src = "paper.png";
+      document.getElementById("winnerTag").innerHTML = 'It is a Tie!';
       return "This game is a tie!";
     }
     if (userChoice === 'scissors' && userChoice === computerChoice) {
