@@ -1,3 +1,6 @@
+//opening message
+let Enter = prompt("Are you ready to die: ")
+
 //This sets the base score, the starting score for both the computer and the player as 0
 let playerWins = 0;
 let computerWins = 0;
@@ -20,9 +23,7 @@ const getUserChoice = (userChoice) => {
     document.getElementById("rock").src = "rock.png";
     document.getElementById("scissors").src = "scissors.png";
     return userChoice;
-  } else {
-    console.log("Error, please type:rock, paper, or scissors.");
-  }
+  } 
 };
 
 //This function randomizes the computer's choices and then saves the computer choice for when the function is called
@@ -58,6 +59,35 @@ const determineWinner = (userChoice, computerChoice) => {
     }
   }
 
+  if (userChoice === 'rock') {
+    if (computerChoice === "paper") {
+      document.getElementById("winner").src = "paper.png";
+      document.getElementById("compImg").src = "paper.png";
+      document.getElementById("winnerTag").innerHTML = 'Winner!';
+      document.getElementById("computerWins").innerHTML = computerWins++;
+    } else {
+      document.getElementById("winner").src = "rock.png";
+      document.getElementById("compImg").src = "scissors.png";
+      document.getElementById("winnerTag").innerHTML = 'Winner!';
+      document.getElementById("playerWins").innerHTML = playerWins++;
+    }
+  }
+
+  if (userChoice === 'paper') {
+    if (computerChoice === "scissors") {
+      document.getElementById("winner").src = "scissors.png";
+      document.getElementById("compImg").src = "scissors.png";
+      document.getElementById("winnerTag").innerHTML = 'Winner!';
+      document.getElementById("computerWins").innerHTML = computerWins++;
+    } else {
+      document.getElementById("winner").src = "paper.png";
+      document.getElementById("compImg").src = "rock.png";
+      document.getElementById("winnerTag").innerHTML = 'Winner!';
+      document.getElementById("playerWins").innerHTML = playerWins++;
+    }
+  }
+
+
   if (userChoice === "scissors") {
     if (computerChoice === "rock") {
       document.getElementById("winner").src = "rock.png";
@@ -89,3 +119,4 @@ const reset = () => {
 }
 
 playGame();
+
